@@ -1,178 +1,31 @@
-<!-- 
--->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <title>Geo JSON</title>
 
-<style>
-ul
-{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: darkred;
-}
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
 
-li
-{
-  float: left;
-}
+  <!--D3 cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 
-li a
-{
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active)
-{
-  background-color: blue;
-}
-
-.active
-{
-  background-color: blue;
-}
-
-.header
-{
-  height: 100px;
-  padding-top: 1px;
-  background: lightcyan;
-}
-
-.header h1
-{
-  padding: 35px;
-  margin: 0;
-  color: #000;
-  text-align: center;
-}
-
-header {
-  background: red;
-}
-
-h1 {
-  padding: 20px 0;
-  margin: 0;
-  margin-bottom: 20px;
-  font-size: 40px;
-  color: #eee;
-  text-align: center;
-}
-
-h2
-{
-  font-size: 20px;
-  text-align: center;
-}
-
-h3 {
-  font-size: 14px;
-}
-
-h4 {
-  font-size: 10px;
-  color: white;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 18px;
-  line-height: 150%;
-  color: #333;
-  background: whitesmoke;
-}
-
-
-iframe,
-img,
-embed,
-figure,
-figcaption,
-mark,
-audio,
-video
-{  
-  /* Positioning */
-  margin: 0;
-  vertical-align: baseline;
-
-  /* Box-model */
-  padding: 0;
-
-  /* Typography */
-  font-size: 100%;
-  font: inherit;
-
-  /* Visual */
-  border: 0;
-}
-
-section
-{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-</style>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+  <!-- The div where we will inject our map -->
+  <div id="map"></div>
 
-<ul>
-  <li><a href="file:///Users/arash/Dropbox/AB1_DataGitHub_Analysis/GWDataAnalytics/GWDA_Project2/0_Presentation.html">Home</a></li>
-  <li><a target="_blank" href="./4-Data/Data.html">Data</a></li>
-  <li><a target="_blank" href="./1-CompetetiveDistrictsMapping2018/CompetetiveDistricts.html">MAP</a></li>
-  <li><a target="_blank" href="./1-CompetetiveDistrictsMapping2018/CompetetiveDistricts_HillaryLand.html">HillaryLand</a></li>
-  <li><a target="_blank" href="./5-ScatterPlot/ScatterPlot_HillaryLand_and_TossUp.html">Districts</a></li>
-  <li><a target="_blank" href="./2-MidTermElection1994_to_2018/MidTermElection.html">MidT</a></li>
-  <li><a target="_blank" href="./3-TrumpJobApproval_UptoOct2018/Total_Approval_and_Net/TrumpJobApproval_and_Net.html">Poll</a></li>
-  <li><a target="_blank" href="./6-Prediction/Prediction.html">Prediction</a></li>
-  <li><a target="_blank" href="./7-Prediction_Turnout/PredictionTurnout.html">TurnOut</a></li>
-  <li style="float:right"><a class="active" target="_blank" href="">API</a></li>
-</ul>
-
-<header class="header">
-  <h1>US Mid-Term Election 2018</h1>
-  <h2>Who will be the next Speaker of THE HOUSE?</h2>
-</header>
-
-<br>
-
-<br>
-
-<section>
-
-    <h3>
-      An Extremely Detailed Map of 2016 Election by <a href="https://www.nytimes.com/interactive/2018/upshot/election-2016-voting-precinct-maps.html#3.71/39.20/-94.51">NewYorkTimes</a>
-    </h3>
-
-    <article>
-
-        <a target="_blank" href="0_NYTMap.png">
-        <img width="1400" src="0_NYTMap.png" alt="2016 Election Detailed Map">
-        </a>
-
-        <p><em>NYT 2016 Election Detailed Map</em></p>
-
-    </article>
-<hr>
-
-</section>
-
-<!-- <section>
-
-<iframe type="text/html" src="https://www.nytimes.com/interactive/2018/upshot/election-2016-voting-precinct-maps.html#3.71/39.20/-94.51" frameborder="0"></iframe>
-
-</section> -->
+  <!-- API key -->
+  <script type="text/javascript" src="config.js"></script>
+  <!-- JS -->
+  <script type="text/javascript" src="logic.js"></script>
 </body>
 </html>
